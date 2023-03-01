@@ -15,14 +15,9 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "deploy": "git subtree push --prefix build origin gh-pages",
     "test": "craco test",
-    "eject": "craco eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "format": "prettier --write './**/*.{js,css,json}' --config ./.prettierrc.json"
   },
   "browserslist": {
     "production": [
@@ -37,12 +32,22 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
     "@craco/craco": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "image-minimizer-webpack-plugin": "^3.8.1",
     "imagemin": "^8.0.1",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^10.0.1"
+    "imagemin-svgo": "^10.0.1",
+    "prettier": "^2.8.4"
   }
 }
