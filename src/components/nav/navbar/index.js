@@ -1,14 +1,15 @@
-import Logo from '@components/nav/logo'
+import NavItem from '@components/nav/navItem'
 import React from 'react'
 
 import style from './Navbar.module.scss'
 
 const Navbar = () => {
-  return (
-    <div className={style.navbar}>
-      <Logo />
-    </div>
-  )
+  const navArray = ['Home', 'Products', 'About']
+  const navItemArray = navArray.map((listItem) => (
+    <NavItem LinkDestination={listItem} key={listItem} />
+  ))
+
+  return <ul className={style.navbar}>{navItemArray}</ul>
 }
 
 export default Navbar
