@@ -1,23 +1,23 @@
 @font-face {
   font-family: 'Roboto';
-  src: url('~@assets/fonts/roboto-regular-webfont.woff2') format('woff'),
-       url('~@assets/fonts/roboto-regular-webfont.woff') format('woff2');
+  src: url('~@assets/fonts/roboto-regular-webfont.woff2') format('woff2'),
+       url('~@assets/fonts/roboto-regular-webfont.woff') format('woff');
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('~@assets/fonts/roboto-italic-webfont.woff2') format('woff'),
-       url('~@assets/fonts/roboto-italic-webfont.woff') format('woff2');
+  src: url('~@assets/fonts/roboto-italic-webfont.woff2') format('woff2'),
+       url('~@assets/fonts/roboto-italic-webfont.woff') format('woff');
   font-style: italic;
   font-weight: normal;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('~@assets/fonts/roboto-bold-webfont.woff2') format('woff'),
-       url('~@assets/fonts/roboto-bold-webfont.woff') format('woff2');
+  src: url('~@assets/fonts/roboto-bold-webfont.woff2') format('woff2'),
+       url('~@assets/fonts/roboto-bold-webfont.woff') format('woff');
   font-style: normal;
   font-weight: bold;
 }
@@ -56,7 +56,7 @@ header {
 }
 
 body {
-  font-family: 'Roboto', 'Trebuchet MS', Helvetica, sans-serif;
+  font-family: Roboto, 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 a {

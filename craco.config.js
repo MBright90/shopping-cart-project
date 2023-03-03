@@ -8,7 +8,7 @@ module.exports = {
       '@fonts': path.resolve(__dirname, './src/assets/fonts'),
       '@components': path.resolve(__dirname, './src/components'),
       '@routes': path.resolve(__dirname, './src/routing'),
-      '@styles': path.resolve(__dirname, './src/style')
+      '@styles': path.resolve(__dirname, './src/styles')
     },
     module: {
       rules: {
