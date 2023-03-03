@@ -1,5 +1,5 @@
 import App from '@components/app'
-import Navbar from '@components/nav/navbar'
+import Header from '@components/nav/header'
 import React from 'react'
 import { HashRouter, Routes } from 'react-router-dom'
 
@@ -7,7 +7,7 @@ const RouteSwitch = () => {
   return (
     <App>
       <HashRouter>
-        <Navbar />
+        <Header />
         <Routes></Routes>
       </HashRouter>
     </App>
