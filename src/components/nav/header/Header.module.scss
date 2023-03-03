@@ -1,0 +1,12 @@
+@import '~@styles/_variables.scss';
+
+.header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $breakpoint-small) {
+        flex-direction: row;
+    }
+}
