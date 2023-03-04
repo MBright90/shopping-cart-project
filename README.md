@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Manson Guitar Website
+This is a fictional merchant website built with frontend technologies that specializes in selling guitars, amps, and pedals.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Technologies Used
+The website is built with the following technologies:
 
-## Available Scripts
+HTML5
+CSS3
+JavaScript
+ReactJS
 
-In the project directory, you can run:
+### Features
+View products by category (guitars, amps, pedals)
+View individual product details
+Add products to a shopping cart
+View shopping cart with selected products and total price
 
-### `npm start`
+Checkout and submit order (not functional, since this is a fictional website).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### How to Use
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To use the website, simply open the index.html file in a web browser. Alternatively, access the github pages deployment on github.
 
-### `npm test`
+To view a specific product, click on the product name or image. This will take you to the product details page, which includes additional information about the product and the option to add it to your shopping cart.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To add a product to your shopping cart, click on the "Add to Cart" button on the product details page. You can view your shopping cart at any time by clicking on the shopping cart icon in the top navigation menu.
 
-### `npm run build`
+To checkout and submit your order, click on the "Checkout" button in the shopping cart. Note that this feature is not functional, since this is a fictional website.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Credits
+This website was created by MBright90. The product images were sourced from 'Thomann.de' and 'MansonGuitarWorks.com' and are used for demonstration purposes only.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### License
+This project is licensed under the MIT License. See the LICENSE file for details.
