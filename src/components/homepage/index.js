@@ -1,12 +1,9 @@
-import gTwoProImage from '@assets/images/g2-pro.png'
-import mbProImage from '@assets/images/mb-hero-pro.jpg'
-import mbWhitePro from '@assets/images/mb-white-pro.png'
-import oryxProImage from '@assets/images/oryx-pro.jpg'
+import bgImages from '@assets/images/background'
 import React, { useEffect, useState } from 'react'
 
 import style from './Homepage.module.scss'
 
-const imageArray = [mbProImage, gTwoProImage, mbWhitePro, oryxProImage]
+const imageArray = Object.values(bgImages)
 let timerId
 
 const Homepage = () => {
@@ -24,7 +21,7 @@ const Homepage = () => {
   return (
     <div
       className={style.slideShowImage}
-      style={{ backgroundImage: `url(${imageArray[currentImageIndex]}` }}
+      style={{ backgroundImage: `url(${imageArray[currentImageIndex]})` }}
     >
       <div className={style.overlay} />
     </div>
