@@ -2,9 +2,10 @@
 
 .logo {
     margin-bottom: 10px;
-    width: 200px;
+    width: 140px;
 
     @media (min-width: $breakpoint-small) {
         margin-bottom: none;
+        width: 200px;
     }
 }
