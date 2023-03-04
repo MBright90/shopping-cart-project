@@ -7,7 +7,9 @@ import style from './NavItem.module.scss'
 const NavItem = ({ LinkDestination }) => {
   return (
     <li className={style.navItem}>
-      <Link to={LinkDestination.toLowerCase()}>{LinkDestination}</Link>
+      <Link to={LinkDestination !== 'Home' ? LinkDestination.toLowerCase() : '/'}>
+        {LinkDestination}
+      </Link>
     </li>
   )
 }
