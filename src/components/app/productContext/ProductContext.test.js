@@ -44,8 +44,8 @@ describe('productContext', () => {
     const maTwoImage = screen.getByAltText(/MA-2/)
     expect(maTwoImage).toBeInTheDocument()
 
-    const maTwodescription = screen.getByText(/^The Manson MA-2/)
-    expect(maTwodescription).toBeInTheDocument()
+    const maTwoDescription = screen.getByText(/^The Manson MA-2/)
+    expect(maTwoDescription).toBeInTheDocument()
 
     const maTwoPrice = screen.getByText(/£949/)
     expect(maTwoPrice).toBeInTheDocument()
