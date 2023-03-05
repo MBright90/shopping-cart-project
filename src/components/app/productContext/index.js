@@ -116,11 +116,30 @@ const categoryFilters = ['All', 'Guitars', 'Pedals', 'Amps']
 
 const ProductContextProvider = ({ children }) => {
   const [category, setCategory] = useState('all')
+  const [currentProducts, setCurrentProducts] = useState([
+    ...productDatabase.guitars,
+    ...productDatabase.pedals,
+    ...productDatabase.amps
+  ])
+
+  const changeCategory = (newCategory) => {
+    setCategory(newCategory)
+    if (newCategory === 'all') setCurrentProducts([
+      ...productDatabase.guitars,
+      ...productDatabase.pedals,
+      ...productDatabase.amps
+    ])
+    else setCurrentProducts([...productDatabase[newCategory]])
+  }
 
   const contextValue = {
     productDatabase,
+
     category,
-    setCategory,
+    currentProducts,
+
+    changeCategory,
+
     categoryFilters
   }
   return <productContext.Provider value={contextValue}>{children}</productContext.Provider>
