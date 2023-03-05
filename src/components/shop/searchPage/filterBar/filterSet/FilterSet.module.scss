@@ -1,3 +1,5 @@
+@import '~@styles/_variables.scss';
+
 .filterTitle {
     border-right: 2px solid #fff;
     border-bottom: 2px solid #fff;
@@ -9,8 +11,14 @@
 
 .filterSet {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 18px;
+    justify-content: space-around;
     letter-spacing: 1px;
     padding-bottom: 15px;
+
+    @media (min-width: $breakpoint-small) {
+        flex-direction: column;
+        justify-items: flex-start;
+    }
 }
