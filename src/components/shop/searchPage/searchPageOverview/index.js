@@ -1,15 +1,18 @@
+import ProductContextProvider from '@components/app/productContext'
+import FilterBar from '@components/shop/searchPage/filterBar'
+import ProductGrid from '@components/shop/searchPage/productGrid'
 import React from 'react'
 
-import FilterBar from '../filterBar'
-import ProductGrid from '../productGrid'
 import style from './SearchPageOverview.module.scss'
 
 const SearchPageOverview = () => {
   return (
-    <div className={style.searchPageOverview}>
-      <FilterBar />
-      <ProductGrid />
-    </div>
+    <ProductContextProvider>
+      <div className={style.searchPageOverview}>
+        <FilterBar />
+        <ProductGrid />
+      </div>
+    </ProductContextProvider>
   )
 }
 
