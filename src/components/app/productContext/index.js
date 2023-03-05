@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { arrayOf, node, oneOf } from 'prop-types'
-import React, { createContext } from 'react'
+import { object } from 'prop-types'
+import React, { createContext, useState } from 'react'
 
 import ampImages from '@assets/images/products/amps'
 import guitarImages from '@assets/images/products/guitars'
@@ -112,15 +112,22 @@ const productDatabase = {
   ]
 }
 
-const ProductContext = ({ children }) => {
+const categoryFilters = ['All', 'Guitars', 'Pedals', 'Amps']
+
+const ProductContextProvider = ({ children }) => {
+  const [category, setCategory] = useState('all')
+
   const contextValue = {
-    productDatabase
+    productDatabase,
+    category,
+    setCategory,
+    categoryFilters
   }
   return <productContext.Provider value={contextValue}>{children}</productContext.Provider>
 }
 
-ProductContext.propTypes = {
-  children: oneOf([node, arrayOf(node)])
+ProductContextProvider.propTypes = {
+  children: object.isRequired
 }
 
-export default ProductContext
+export default ProductContextProvider
