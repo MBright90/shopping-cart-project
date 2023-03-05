@@ -1,18 +1,14 @@
-import { oneOf } from 'prop-types'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 import style from './App.module.scss'
-import ProductContext from './productContext'
 
 const App = ({ children }) => {
-  return (
-    <ProductContext>
-      <div className={style.appLayout}>{children}</div>
-    </ProductContext>
-  )
+  return <div className={style.appLayout}>{children}</div>
 }
 
 App.propTypes = {
-  children: oneOf([Node, NodeList]).isRequired
+  children: PropTypes.object
 }
 
 export default App
