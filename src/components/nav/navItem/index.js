@@ -1,4 +1,4 @@
-import string from 'prop-types'
+import { func, oneOfType, string } from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -15,7 +15,7 @@ const NavItem = ({ LinkDestination }) => {
 }
 
 NavItem.propTypes = {
-  LinkDestination: string.isRequired
+  LinkDestination: oneOfType([string, func]).isRequired
 }
 
 export default NavItem
