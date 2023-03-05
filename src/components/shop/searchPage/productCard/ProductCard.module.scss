@@ -1,0 +1,31 @@
+@import '~@styles/_variables.scss';
+
+.productCard {
+    border: 2px solid $manson-red;
+    border-radius: 3px;
+    padding: 10px;
+
+    div {
+        pointer-events: none;
+    }
+}
+
+.productImage {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+.name {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.price {
+    color: $manson-red;
+    font-style: italic;
+    margin-top: 10px;
+}

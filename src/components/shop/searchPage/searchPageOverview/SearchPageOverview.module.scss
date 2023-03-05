@@ -1,9 +1,13 @@
 @import '~@styles/_variables.scss';
 
 .searchPageOverview {
-    background-color: $manson-red;
     border-radius: 3px;
     display: flex;
-    margin: 5%;
+    flex-direction: column;
+    margin: 0 5% 5%;
     width: 90%;
+
+    @media (min-width: $breakpoint-small) {
+        flex-direction: row;
+    }
 }

@@ -1,4 +1,8 @@
 .productGrid {
-    background-color: rgba(100, 200, 150, 0.5);
     flex: 1;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    margin: 0 10px;
 }
