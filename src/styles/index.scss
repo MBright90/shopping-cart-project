@@ -90,4 +90,12 @@ section {
   display: block;
 }
 
+main {
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5% 5%;
+  width: 90%;
+}
+
 /* stylistic scrollbar styles TODO */
