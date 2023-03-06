@@ -8,10 +8,8 @@ const ProductGrid = () => {
   const { currentProducts } = useContext(productContext)
 
   const productArray = currentProducts.map((product) => {
-    console.log(product)
     return <ProductCard product={product} key={product.name} />
   })
-  console.log(productArray)
 
   return <div className={style.productGrid}>{productArray}</div>
 }

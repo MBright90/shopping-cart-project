@@ -1,22 +1,15 @@
 import { object } from 'prop-types'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import style from './ProductCard.module.scss'
 
 const ProductCard = ({ product }) => {
-  const handleProductClick = (e) => {
-    console.log(e.target)
-  }
-
-  const handleProductKeyDown = (e) => {
-    if (e.code === 'Enter') handleProductClick(e)
-  }
-
   return (
-    <div
+    <Link
+      to={`/products/${product.id}`}
       className={style.productCard}
-      onClick={handleProductClick}
-      onKeyDown={handleProductKeyDown}
+      data-product-id={product.id}
       tabIndex="-1"
       data-testid="product-card"
     >
@@ -29,7 +22,7 @@ const ProductCard = ({ product }) => {
         <p className={style.name}>{product.name}</p>
         <p className={style.price}>£{product.price}</p>
       </div>
-    </div>
+    </Link>
   )
 }
 
