@@ -12,36 +12,42 @@ const productDatabase = {
   guitars: [
     {
       name: 'MA-2',
+      id: 'ma-2-guitars',
       image: guitarImages.maTwo,
       price: 949,
       description: 'The Manson MA-2 is a versatile and affordable electric guitar that\'s perfect for players of all levels. Its lightweight body and comfortable neck make it easy to play for hours on end, while its high-output pickups deliver a wide range of tones. Whether you\'re playing blues, rock, or metal, the MA-2 can handle it all with ease.'
     },
     {
       name: 'NEBULA-X',
+      id: 'nebula-x-guitars',
       image: guitarImages.nebula,
       price: 1050,
       description: 'The Manson NEBULA-X is a sleek and futuristic electric guitar that\'s perfect for players who want a modern and innovative instrument. Its unique design and custom pickups deliver a wide range of tones, from crisp and clean to heavy and distorted. Whether you\'re playing on stage or in the studio, the NEBULA-X is sure to turn heads and deliver an unforgettable sound.'
     },
     {
       name: 'DLR-02',
+      id: 'dlr-02-guitars',
       image: guitarImages.dlr,
       price: 5699,
       description: 'The Manson DLR-02 is a high-end electric guitar that\'s designed for professional players who demand the very best. Its hand-crafted construction, premium materials, and custom pickups deliver a tone that\'s rich, complex, and full of character. Whether you\'re playing jazz, fusion, or experimental music, the DLR-02 is sure to inspire and elevate your playing to new heights.'
     },
     {
       name: 'ORYX VII',
+      id: 'oryx-vii-guitars',
       image: guitarImages.oryx,
       price: 3349,
       description: 'The Manson ORYX VII is a bold and powerful electric guitar that\'s perfect for heavy rock and metal. Its aggressive styling and custom pickups deliver a tone that\'s thick, aggressive, and full of attitude. Whether you\'re playing crushing riffs or blistering solos, the ORYX VII is sure to make a statement and deliver a sound that\'s truly unforgettable.'
     },
     {
       name: 'META MBM-1',
+      id: 'meta-mbm-1-guitars',
       image: guitarImages.mbmOne,
       price: 499,
       description: 'The Manson META MBM-1 is a signature electric guitar designed in collaboration with Matt Bellamy of the band Muse. Its unique shape, custom pickups, and versatile switching options make it perfect for players who want to replicate Matt\'s iconic sound. Whether you\'re a fan of Muse or just looking for a great guitar that\'s full of character, the META MBM-1 is sure to deliver.'
     },
     {
       name: 'DL-2',
+      id: 'dl-2-guitars',
       image: guitarImages.dlTwo,
       price: 1099,
       description: 'The Manson DL-2 is a versatile and high-quality electric guitar that\'s perfect for players who demand the very best. Its lightweight body and custom pickups deliver a wide range of tones, from clean and mellow to heavy and distorted. Whether you\'re playing in a band, recording in the studio, or just jamming at home, the DL-2 is sure to inspire and impress.' 
@@ -50,6 +56,7 @@ const productDatabase = {
   pedals: [
     {
       name: 'Boss DS-1 Distortion Pedal',
+      id: 'boss-ds1-pedals',
       image: pedalImages.bossDs,
       price: 49.99,
       description:
@@ -57,13 +64,15 @@ const productDatabase = {
     },
     {
       name: 'Electro-Harmonix Big Muff Pi Fuzz Pedal',
+      id: 'electro-harmonix-big-muff-pedals',
       image: pedalImages.bigMuff,
       price: 79.99,
       description:
         'The Electro-Harmonix Big Muff Pi Fuzz Pedal is a legendary fuzz pedal that\'s been used by guitarists for decades. Its unique sound is characterized by a thick, creamy fuzz that\'s perfect for heavy riffs and solos. This pedal features simple controls and is easy to use, making it a great choice for players who want a classic fuzz sound without a lot of tweaking.'
     },
     {
-      name: 'TC Electronic Ditto Looper Pedal',
+      name: 'TC Electronic Ditto Looper Pedals',
+      id: 'tc-ditto-looper-pedal',
       image: pedalImages.dittoLoop,
       price: 99.99,
       description:
@@ -71,6 +80,7 @@ const productDatabase = {
     },
     {
       name: 'MXR M169 Carbon Copy Analog Delay Pedal',
+      id: 'mxr-carbon-copy-delay-pedals',
       image: pedalImages.carbonCopy,
       price: 149.99,
       description:
@@ -78,6 +88,7 @@ const productDatabase = {
     },
     {
       name: 'Strymon Timeline Delay Pedal',
+      id: 'strymon-timeline-delay-pedals',
       image: pedalImages.timelineDelay,
       price: 449.99,
       description:
@@ -87,24 +98,28 @@ const productDatabase = {
   amps: [
     {
       name: 'Mesa Boogie Mark V',
+      id: 'mesa-boogie-mark-v-amps',
       image: ampImages.mesaBoogie,
       price: 2499,
       description: 'The Mesa Boogie Mark V is a versatile and powerful guitar amp that can handle any style of music. With three channels and multiple modes, this amp delivers everything from sparkling cleans to bone-crushing distortion. Whether you\'re playing in a small club or a large arena, the Mark V is sure to provide the tone and power you need to stand out.'
     },
     {
       name: 'Marshall JVM410H',
+      id: 'marshall-jvm410h-amps',
       image: ampImages.marshallJVM,
       price: 1999,
       description: 'The Marshall JVM410H is a high-end guitar amp that\'s perfect for players who demand the very best. With four channels and multiple modes, this amp delivers a wide range of tones, from classic rock to modern metal. Whether you\'re playing in the studio or on stage, the JVM410H is sure to inspire and impress.'
     },
     {
       name: 'Fender Blues Junior',
+      id: 'fender-blues-junior-amps',
       image: ampImages.fenderBlues,
       price: 599,
       description: 'The Fender Blues Junior is a classic and affordable guitar amp that\'s perfect for blues and rock players. With its simple controls and 15 watts of power, this amp delivers a warm and punchy tone that\'s perfect for small gigs and rehearsals. Whether you\'re playing at home or on stage, the Blues Junior is sure to provide the classic Fender sound you love.'
     },
     {
       name: 'Orange Rockerverb 50 MKIII',
+      id: 'orange-rockerverb-50-mkiii-amps',
       image: ampImages.rockerVerb,
       price: 2099,
       description: 'The Orange Rockerverb 50 MKIII is a high-quality guitar amp that\'s perfect for players who demand the best tone and performance. With its two channels and multiple modes, this amp delivers a wide range of tones, from vintage clean to modern high-gain. Whether you\'re playing in a band or recording in the studio, the Rockerverb 50 MKIII is sure to provide the power and versatility you need.'
@@ -132,6 +147,12 @@ const ProductContextProvider = ({ children }) => {
     else setCurrentProducts([...productDatabase[newCategory]])
   }
 
+  const findProduct = (productId) => {
+    // Retrieve last element of array to specify category
+    const productCategory = productId.split('-').slice(-1)[0]
+    return productDatabase[productCategory].find((product) => product.id == productId)
+  }
+
   const contextValue = {
     productDatabase,
 
@@ -140,6 +161,7 @@ const ProductContextProvider = ({ children }) => {
 
     changeCategory,
 
+    findProduct,
     categoryFilters
   }
   return <productContext.Provider value={contextValue}>{children}</productContext.Provider>
