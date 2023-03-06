@@ -5,10 +5,10 @@ import React, { useContext } from 'react'
 import style from './FilterItem.module.scss'
 
 const FilterItem = ({ filterText }) => {
-  const { setCategory } = useContext(productContext)
+  const { changeCategory } = useContext(productContext)
 
   const handleFilterClick = (e) => {
-    setCategory(e.target.textContent.toLowerCase())
+    changeCategory(e.target.textContent.toLowerCase())
   }
 
   return (
