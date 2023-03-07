@@ -1,0 +1,16 @@
+@import '~@styles/_variables.scss';
+
+.productHeadline {
+    font-size: 20px;
+    font-weight: bold;
+
+    .productName {
+        color: $manson-red;
+        font-family: $manson-font;
+        margin-right: 20px;
+    }
+
+    @media (min-width: $breakpoint-small) {
+        font-size: 28px
+    }
+}

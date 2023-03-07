@@ -1,7 +1,13 @@
+@import '~@styles/_variables.scss';
+
 .productImage {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 400px;
+    height: 200px;
     width: 100%;
+
+    @media (min-width: $breakpoint-small) {
+        height: 400px;
+    }
 }
