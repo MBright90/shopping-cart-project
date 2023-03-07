@@ -4,6 +4,7 @@ import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 
 import style from './ProductPage.module.scss'
+import ProductDetails from './productDetails'
 
 const ProductPage = () => {
   const { productId } = useParams()
@@ -18,6 +19,7 @@ const ProductPage = () => {
     productPage = (
       <React.Fragment>
         <ProductImage image={product.image} />
+        <ProductDetails product={product} />
       </React.Fragment>
     )
   }
