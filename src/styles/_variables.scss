@@ -1,2 +1,11 @@
+@font-face {
+    font-family: kaushan-script;
+    src: url('~@assets/fonts/kaushanscript-regular-webfont.woff2') format('woff2'),
+         url('~@assets/fonts/kaushanscript-regular-webfont.woff2') format('woff2');
+    font-style: normal;
+    font-weight: normal;
+}
+
 $breakpoint-small: 750px;
 $manson-red: #ff4747;
+$manson-font: kaushan-script;
