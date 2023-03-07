@@ -1,0 +1,15 @@
+.productPurchasing {
+    background-color: rgba(50, 50, 50, 0.8);
+    border-radius: 3px;
+    grid-area: "purchase";
+    padding: 10px;
+}
+
+.purchaseTitle {
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    margin-bottom: 10px;
+    padding: 0 0 5px 2px;
+    font-size: 22px;
+    letter-spacing: 2px;
+}

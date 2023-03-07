@@ -1,16 +1,18 @@
 @import '~@styles/_variables.scss';
 
-.productHeadline {
-    font-size: 20px;
-    font-weight: bold;
-
-    .productName {
-        color: $manson-red;
-        font-family: $manson-font;
-        margin-right: 20px;
-    }
+.productPage {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "image   "
+                         "purchase"
+                         "details "
+    ;
 
     @media (min-width: $breakpoint-small) {
-        font-size: 28px
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "image   image   "
+                             "details purchase"
+;
     }
 }
