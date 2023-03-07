@@ -10,9 +10,9 @@
     ;
 
     @media (min-width: $breakpoint-small) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: "image   image   "
-                             "details purchase"
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "image   image   image"
+                             "details details purchase"
 ;
     }
 }
