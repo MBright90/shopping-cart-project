@@ -72,7 +72,7 @@ const productDatabase = {
     },
     {
       name: 'TC Electronic Ditto Looper Pedals',
-      id: 'tc-ditto-looper-pedal',
+      id: 'tc-ditto-looper-pedals',
       image: pedalImages.dittoLoop,
       price: 99.99,
       description:
