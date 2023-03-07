@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 
 import style from './ProductPage.module.scss'
 import ProductDetails from './productDetails'
+import ProductPurchasing from './productPurchasing'
 
 const ProductPage = () => {
   const { productId } = useParams()
@@ -20,11 +21,12 @@ const ProductPage = () => {
       <React.Fragment>
         <ProductImage image={product.image} />
         <ProductDetails product={product} />
+        <ProductPurchasing />
       </React.Fragment>
     )
   }
 
-  return <main style={style.productPage}>{productPage}</main>
+  return <main className={style.productPage}>{productPage}</main>
 }
 
 export default ProductPage
