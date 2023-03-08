@@ -1,10 +1,11 @@
-import { array } from 'prop-types'
+import { object } from 'prop-types'
 import React, { createContext, useState } from 'react'
 
 export const cartContext = createContext()
 
 const CartContextProvider = ({ children }) => {
   const [cartContents, setCartContents] = useState([])
+  const [isShowing, setIsShowing] = useState(false)
 
   const checkCart = (productId) => {
     if (cartContents.length) return cartContents.find((product) => product.id === productId)
@@ -24,14 +25,16 @@ const CartContextProvider = ({ children }) => {
 
   const contextValue = {
     addProductToCart,
-    cartContents
+    cartContents,
+    isShowing,
+    setIsShowing
   }
 
   return <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>
 }
 
 CartContextProvider.propTypes = {
-  children: array.isRequired
+  children: object.isRequired
 }
 
 export default CartContextProvider

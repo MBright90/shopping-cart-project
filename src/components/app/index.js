@@ -1,14 +1,20 @@
-import PropTypes from 'prop-types'
+import Cart from '@components/utilities/cart'
+import { array } from 'prop-types'
 import React from 'react'
 
 import style from './App.module.scss'
 
 const App = ({ children }) => {
-  return <div className={style.appLayout}>{children}</div>
+  return (
+    <div className={style.appLayout}>
+      <Cart />
+      {children}
+    </div>
+  )
 }
 
 App.propTypes = {
-  children: PropTypes.object
+  children: array.isRequired
 }
 
 export default App
