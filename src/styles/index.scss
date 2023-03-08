@@ -63,6 +63,10 @@ header {
   vertical-align: baseline;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 body, input, button {
   font-family: Roboto, 'Trebuchet MS', Helvetica, sans-serif;
 }
