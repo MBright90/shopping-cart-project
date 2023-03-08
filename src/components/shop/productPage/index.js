@@ -21,7 +21,7 @@ const ProductPage = () => {
       <React.Fragment>
         <ProductImage image={product.image} />
         <ProductDetails product={product} />
-        <ProductPurchasing inStock={product.inStock} />
+        <ProductPurchasing inStock={product.inStock} productId={product.id} />
       </React.Fragment>
     )
   }
