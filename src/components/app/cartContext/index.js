@@ -23,7 +23,8 @@ const CartContextProvider = ({ children }) => {
   }
 
   const contextValue = {
-    addProductToCart
+    addProductToCart,
+    cartContents
   }
 
   return <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>
