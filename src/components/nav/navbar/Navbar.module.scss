@@ -33,6 +33,13 @@
     top: 40px;
     right: 40px;
 
+    .basketAmount {
+        position: relative;
+        margin-left: '3px';
+        font-weight: 'bold';
+        top: -3px;
+    }
+
     @media (min-width: $breakpoint-small) {
         position: relative;
         top: 0;

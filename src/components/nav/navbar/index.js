@@ -24,7 +24,7 @@ const Navbar = () => {
 
       <button className={style.basketLink} onClick={handleBasketClick}>
         <FontAwesomeIcon icon={faBasketShopping} />
-        <p style={{ marginLeft: '3px', fontWeight: 'bold' }}>{cartContents.length}</p>
+        <p className={style.basketAmount}>{cartContents.length}</p>
       </button>
     </div>
   )
