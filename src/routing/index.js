@@ -10,9 +10,9 @@ import { HashRouter, Route, Routes } from 'react-router-dom'
 
 const RouteSwitch = () => {
   return (
-    <App>
-      <HashRouter>
-        <CartContextProvider>
+    <HashRouter>
+      <CartContextProvider>
+        <App>
           <Header />
           <ProductContextProvider>
             <Routes>
@@ -21,9 +21,9 @@ const RouteSwitch = () => {
               <Route path="/products/:productId" element={<ProductPage />} />
             </Routes>
           </ProductContextProvider>
-        </CartContextProvider>
-      </HashRouter>
-    </App>
+        </App>
+      </CartContextProvider>
+    </HashRouter>
   )
 }
 
