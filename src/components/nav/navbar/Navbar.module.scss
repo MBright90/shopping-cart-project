@@ -23,11 +23,12 @@
 .basketLink {
     background-color: $manson-red;
     border-radius: 2px;
+    border: none;
     color: #000;
     cursor: pointer;
     display: flex;
     font-size: 20px;
-    padding: 8px 5px;
+    padding: 8px 5px 5px;
     position: absolute;
     top: 40px;
     right: 40px;
