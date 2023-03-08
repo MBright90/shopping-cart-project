@@ -1,11 +1,9 @@
-import { number } from 'prop-types'
-import React, { useState } from 'react'
+import { func, number } from 'prop-types'
+import React from 'react'
 
 import style from './InputQuantity.module.scss'
 
-const InputQuantity = ({ orderQuantity }) => {
-  const [quantity, setQuantity] = useState(orderQuantity)
-
+const InputQuantity = ({ quantity, setQuantity }) => {
   const handlePlusClick = () => {
     if (quantity < 9) setQuantity(quantity + 1)
   }
@@ -29,8 +27,9 @@ const InputQuantity = ({ orderQuantity }) => {
         type="number"
         id="quantity-input"
         data-testid="quantity-input"
-        onKeyDown="return false"
+        onKeyDown={() => false}
         value={quantity}
+        readOnly
         min={0}
         max={9}
       />
@@ -51,7 +50,9 @@ InputQuantity.defaultProps = {
 }
 
 InputQuantity.propTypes = {
-  orderQuantity: number.isRequired
+  orderQuantity: number.isRequired,
+  quantity: number.isRequired,
+  setQuantity: func.isRequired
 }
 
 export default InputQuantity
