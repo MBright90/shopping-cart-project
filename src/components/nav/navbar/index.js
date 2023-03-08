@@ -7,21 +7,25 @@ import React, { useContext } from 'react'
 import style from './Navbar.module.scss'
 
 const Navbar = () => {
-  const { cartContents } = useContext(cartContext)
+  const { cartContents, isShowing, setIsShowing } = useContext(cartContext)
 
   const navArray = ['Home', 'Products', 'About']
   const navItemArray = navArray.map((listItem) => (
     <NavItem LinkDestination={listItem} key={listItem} />
   ))
 
+  const handleBasketClick = () => {
+    if (!isShowing) setIsShowing(true)
+  }
+
   return (
     <div className={style.navbar}>
       <ul className={style.linkList}>{navItemArray}</ul>
 
-      <div className={style.basketLink}>
+      <button className={style.basketLink} onClick={handleBasketClick}>
         <FontAwesomeIcon icon={faBasketShopping} />
         <p style={{ marginLeft: '3px', fontWeight: 'bold' }}>{cartContents.length}</p>
-      </div>
+      </button>
     </div>
   )
 }
