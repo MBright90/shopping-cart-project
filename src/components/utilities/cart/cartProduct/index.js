@@ -11,8 +11,6 @@ const CartProduct = ({ product, removeProduct }) => {
   const { updateCartQuantity } = useContext(cartContext)
 
   const calculateProductTotal = () => {
-    console.log(product.price)
-    console.log(product.quantity)
     return product.price * product.quantity
   }
 
