@@ -1,11 +1,24 @@
 import { object } from 'prop-types'
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 
 export const cartContext = createContext()
 
 const CartContextProvider = ({ children }) => {
   const [cartContents, setCartContents] = useState([])
   const [isShowing, setIsShowing] = useState(false)
+  // const [activeDiscount, setActiveDiscount] = useState(0)
+
+  const [totalPrice, setTotalPrice] = useState(
+    cartContents.length > 0 ? cartContents.reduce((product) => product.price * product.quantity) : 0
+  )
+
+  useEffect(() => {
+    setTotalPrice(
+      cartContents.length > 0
+        ? cartContents.reduce((total, product) => total + product.price * product.quantity, 0)
+        : 0
+    )
+  }, [cartContents])
 
   const checkCart = (productId) => {
     if (cartContents.length) return cartContents.find((product) => product.id === productId)
@@ -23,11 +36,22 @@ const CartContextProvider = ({ children }) => {
     return true
   }
 
+  const updateQuantity = (productId, newQuantity) => {
+    const productIndex = cartContents.findIndex((product) => product.id === productId)
+    const tempCartContents = [...cartContents]
+    tempCartContents[productIndex].quantity = newQuantity
+    setCartContents(tempCartContents)
+  }
+
   const contextValue = {
     addProductToCart,
     cartContents,
+    totalPrice,
+
     isShowing,
-    setIsShowing
+    setIsShowing,
+
+    updateQuantity
   }
 
   return <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>
