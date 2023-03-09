@@ -2,9 +2,9 @@
 
 .productCard {
     border-bottom: 2px solid #fff;
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr);
     gap: 10px;
-    justify-content: space-between;
     margin: 20px 0;
     padding-bottom: 10px;
     position: relative;
@@ -37,10 +37,10 @@
 }
 
 .productQuantity {
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: right;
 }
 
 .totalPrice {
