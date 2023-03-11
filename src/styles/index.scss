@@ -76,6 +76,10 @@ a {
   text-decoration: none;
 }
 
+svg {
+  pointer-events: none;
+}
+
 ol,
 ul {
   list-style: none;
