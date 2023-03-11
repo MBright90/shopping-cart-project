@@ -7,8 +7,8 @@ import React, { useContext } from 'react'
 
 import style from './CartProduct.module.scss'
 
-const CartProduct = ({ product, removeProduct }) => {
-  const { updateCartQuantity } = useContext(cartContext)
+const CartProduct = ({ product }) => {
+  const { removeProductFromCart, updateCartQuantity } = useContext(cartContext)
 
   const calculateProductTotal = () => {
     return product.price * product.quantity
@@ -16,6 +16,10 @@ const CartProduct = ({ product, removeProduct }) => {
 
   const setQuantity = (newQuantity) => {
     updateCartQuantity(product.id, newQuantity)
+  }
+
+  const removeProduct = (e) => {
+    removeProductFromCart(e.target.dataset.productId)
   }
 
   return (
@@ -34,7 +38,7 @@ const CartProduct = ({ product, removeProduct }) => {
         <InputQuantity quantity={product.quantity} setQuantity={setQuantity} />
         <p className={style.totalPrice}>Total: £{calculateProductTotal()}</p>
       </div>
-      <button className={style.deleteButton} onClick={removeProduct}>
+      <button className={style.deleteButton} onClick={removeProduct} data-product-id={product.id}>
         <FontAwesomeIcon icon={faDeleteLeft} />
       </button>
     </div>
