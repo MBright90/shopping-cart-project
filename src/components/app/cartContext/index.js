@@ -36,6 +36,13 @@ const CartContextProvider = ({ children }) => {
     return true
   }
 
+  const removeProductFromCart = (productId) => {
+    const tempCart = [...cartContents]
+    const productIndex = tempCart.findIndex((product) => product.id === productId)
+    tempCart.splice(productIndex, 1)
+    setCartContents(tempCart)
+  }
+
   const updateQuantity = (productId, newQuantity) => {
     const productIndex = cartContents.findIndex((product) => product.id === productId)
     const tempCartContents = [...cartContents]
@@ -45,6 +52,7 @@ const CartContextProvider = ({ children }) => {
 
   const contextValue = {
     addProductToCart,
+    removeProductFromCart,
     cartContents,
     totalPrice,
 
