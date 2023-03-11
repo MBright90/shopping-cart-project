@@ -23,8 +23,10 @@ const Cart = () => {
           if (e.code === 'Enter') setIsShowing(false)
         }}
       ></div>
+
       <div className={`${style.cart} ${isShowing ? style.cartShowing : null}`}>
         <h1 className={style.cartTitle}>Your Cart</h1>
+
         {cartContents.length <= 0 ? (
           <div className={style.emptyCart}>
             <p>You have no items in your cart</p>
@@ -36,7 +38,7 @@ const Cart = () => {
                 <CartProduct product={product} removeProduct={removeProduct} key={product.id} />
               ))}{' '}
             </div>
-            <CartCheckout total={totalPrice} />
+            <CartCheckout totalPrice={totalPrice} />
           </React.Fragment>
         )}
       </div>
