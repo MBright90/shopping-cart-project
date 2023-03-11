@@ -1,0 +1,20 @@
+.cartCheckoutContainer {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+}
+
+.totalPrice {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.checkoutButton {
+    background-color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 18px;
+    width: 111px;
+}

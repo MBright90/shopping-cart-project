@@ -5,8 +5,8 @@ import style from './CartCheckout.module.scss'
 
 const CartCheckout = ({ totalPrice }) => {
   return (
-    <div className={style.checkoutContainer}>
-      <div>£{totalPrice}</div>
+    <div className={style.cartCheckoutContainer}>
+      <div className={style.totalPrice}>£{totalPrice}</div>
       <button className={style.checkoutButton}>Checkout</button>
     </div>
   )
