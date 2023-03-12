@@ -1,4 +1,6 @@
 import { cartContext } from '@components/app/cartContext'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
 
 import style from './Cart.module.scss'
@@ -16,9 +18,7 @@ const Cart = () => {
     <div>
       <div
         className={`${style.cartOverlay} ${isShowing ? style.overlayShowing : null}`}
-        onClick={() => {
-          setIsShowing(false)
-        }}
+        onClick={() => setIsShowing(false)}
         onKeyDown={(e) => {
           if (e.code === 'Enter') setIsShowing(false)
         }}
@@ -26,6 +26,9 @@ const Cart = () => {
 
       <div className={`${style.cart} ${isShowing ? style.cartShowing : null}`}>
         <h1 className={style.cartTitle}>Your Cart</h1>
+        <button className={style.closeCart} onClick={() => setIsShowing(false)}>
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
 
         {cartContents.length <= 0 ? (
           <div className={style.emptyCart}>

@@ -46,3 +46,20 @@
     font-size: 22px;
     padding: 0 0 5px 5px;
 }
+
+.emptyCart {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.closeCart {
+    background-color: inherit;
+    border: none;
+    color: #fff;
+    font-size: 22px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
