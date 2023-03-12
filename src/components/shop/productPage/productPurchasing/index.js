@@ -1,4 +1,5 @@
 import { cartContext } from '@components/app/cartContext'
+import { modalContext } from '@components/app/modalContext'
 import { productContext } from '@components/app/productContext'
 import InputQuantity from '@components/utilities/inputQuantity'
 import { bool, string } from 'prop-types'
@@ -10,10 +11,12 @@ const ProductPurchasing = ({ inStock, productId }) => {
   const [quantity, setQuantity] = useState(1)
   const { addProductToCart } = useContext(cartContext)
   const { findProduct } = useContext(productContext)
+  const { setCurrentModal } = useContext(modalContext)
 
   const handleAddProductClick = () => {
     const product = findProduct(productId)
     addProductToCart(product, quantity)
+    setCurrentModal('Added to cart')
   }
 
   return (
