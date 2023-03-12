@@ -8,21 +8,25 @@ import SearchPageOverview from '@components/shop/searchPage/searchPageOverview'
 import React from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 
+import ModalContextProvider from '../components/app/modalContext'
+
 const RouteSwitch = () => {
   return (
     <HashRouter>
-      <CartContextProvider>
-        <App>
-          <Header />
-          <ProductContextProvider>
-            <Routes>
-              <Route exact path="/" element={<Homepage />} />
-              <Route exact path="/products" element={<SearchPageOverview />} />
-              <Route path="/products/:productId" element={<ProductPage />} />
-            </Routes>
-          </ProductContextProvider>
-        </App>
-      </CartContextProvider>
+      <ModalContextProvider>
+        <CartContextProvider>
+          <App>
+            <Header />
+            <ProductContextProvider>
+              <Routes>
+                <Route exact path="/" element={<Homepage />} />
+                <Route exact path="/products" element={<SearchPageOverview />} />
+                <Route path="/products/:productId" element={<ProductPage />} />
+              </Routes>
+            </ProductContextProvider>
+          </App>
+        </CartContextProvider>
+      </ModalContextProvider>
     </HashRouter>
   )
 }
