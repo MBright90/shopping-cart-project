@@ -1,4 +1,6 @@
 import { modalContext } from '@components/app/modalContext'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { string } from 'prop-types'
 import React, { useContext, useEffect } from 'react'
 
@@ -14,7 +16,7 @@ const Modal = ({ message }) => {
     if (currentModal) {
       timerId = setTimeout(() => {
         setCurrentModal(null)
-      }, 3000)
+      }, 4000)
     }
 
     return () => {
@@ -24,6 +26,9 @@ const Modal = ({ message }) => {
 
   return (
     <div className={style.modalContainer}>
+      <button className={style.modalCloseButton} onClick={() => setCurrentModal(null)}>
+        <FontAwesomeIcon icon={faXmark} />
+      </button>
       <p className={style.modalMessage}>{message}</p>
     </div>
   )
