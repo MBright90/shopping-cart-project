@@ -24,6 +24,11 @@ const Homepage = () => {
       style={{ backgroundImage: `url(${imageArray[currentImageIndex]})` }}
     >
       <div className={style.overlay} />
+      <div className={style.voucherAnnouncement}>
+        <p className={style.announcement}>
+          Use code <span className={style.code}>mBright90</span> for 10% off your order
+        </p>
+      </div>
     </div>
   )
 }

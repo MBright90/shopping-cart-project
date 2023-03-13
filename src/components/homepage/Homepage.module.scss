@@ -1,6 +1,10 @@
+@import '~@styles/_variables.scss';
+
 .slideShowImage {
     background-position: center;
     background-size: cover;
+    display: grid;
+    place-content: center;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -18,4 +22,26 @@
     position: absolute;
     height: 80%;
     width: 100%;
+}
+
+.voucherAnnouncement {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: grid;
+    height: 100px;
+    place-content: center;
+    width: 100vw;
+    z-index: 1;
+}
+
+.announcement {
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding: 5px;
+    text-align: center;
+
+    .code {
+        color: $manson-red;
+        font-family: $manson-font;
+        font-size: 22px;
+    }
 }
