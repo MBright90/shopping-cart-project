@@ -15,8 +15,8 @@ const ProductPurchasing = ({ inStock, productId }) => {
 
   const handleAddProductClick = () => {
     const product = findProduct(productId)
-    addProductToCart(product, quantity)
-    setCurrentModal('Added to cart')
+    if (addProductToCart(product, quantity)) setCurrentModal('Added to cart')
+    else setCurrentModal('Could not add to cart')
   }
 
   return (
