@@ -1,12 +1,14 @@
 import { object } from 'prop-types'
 import React, { createContext, useEffect, useState } from 'react'
 
+const activeVoucherCodes = { mBright90: 0.1, superstarManson: 0.05 }
+
 export const cartContext = createContext()
 
 const CartContextProvider = ({ children }) => {
   const [cartContents, setCartContents] = useState([])
   const [isShowing, setIsShowing] = useState(false)
-  // const [activeDiscount, setActiveDiscount] = useState(0)
+  const [activeDiscount, setActiveDiscount] = useState(0.1)
 
   const [totalPrice, setTotalPrice] = useState(
     cartContents.length > 0 ? cartContents.reduce((product) => product.price * product.quantity) : 0
@@ -15,10 +17,11 @@ const CartContextProvider = ({ children }) => {
   useEffect(() => {
     setTotalPrice(
       cartContents.length > 0
-        ? cartContents.reduce((total, product) => total + product.price * product.quantity, 0)
+        ? cartContents.reduce((total, product) => total + product.price * product.quantity, 0) *
+            (1 - activeDiscount)
         : 0
     )
-  }, [cartContents])
+  }, [activeDiscount, cartContents])
 
   const checkCart = (productId) => {
     if (cartContents.length) return cartContents.find((product) => product.id === productId)
@@ -55,10 +58,12 @@ const CartContextProvider = ({ children }) => {
     removeProductFromCart,
     cartContents,
     totalPrice,
+    activeVoucherCodes,
 
     isShowing,
     setIsShowing,
 
+    setActiveDiscount,
     updateQuantity
   }
 
