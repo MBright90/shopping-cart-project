@@ -2,7 +2,7 @@ import { cartContext } from '@components/app/cartContext'
 import InputQuantity from '@components/utilities/inputQuantity'
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { func, object } from 'prop-types'
+import { object } from 'prop-types'
 import React, { useContext } from 'react'
 
 import style from './CartProduct.module.scss'
@@ -11,7 +11,7 @@ const CartProduct = ({ product }) => {
   const { removeProductFromCart, updateCartQuantity } = useContext(cartContext)
 
   const calculateProductTotal = () => {
-    return product.price * product.quantity
+    return (Math.floor(product.price * product.quantity * 100) / 100).toFixed(2)
   }
 
   const setQuantity = (newQuantity) => {
@@ -46,8 +46,7 @@ const CartProduct = ({ product }) => {
 }
 
 CartProduct.propTypes = {
-  product: object.isRequired,
-  removeProduct: func.isRequired
+  product: object.isRequired
 }
 
 export default CartProduct
