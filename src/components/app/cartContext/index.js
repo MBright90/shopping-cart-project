@@ -47,7 +47,7 @@ const CartContextProvider = ({ children }) => {
     setCartContents(tempCart)
   }
 
-  const updateQuantity = (productId, newQuantity) => {
+  const updateCartQuantity = (productId, newQuantity) => {
     const productIndex = cartContents.findIndex((product) => product.id === productId)
     const tempCartContents = [...cartContents]
     tempCartContents[productIndex].quantity = newQuantity
@@ -65,7 +65,7 @@ const CartContextProvider = ({ children }) => {
     setIsShowing,
 
     setActiveDiscount,
-    updateQuantity
+    updateCartQuantity
   }
 
   return <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>
