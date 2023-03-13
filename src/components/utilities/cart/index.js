@@ -10,10 +10,6 @@ import CartProduct from './cartProduct'
 const Cart = () => {
   const { cartContents, isShowing, setIsShowing, totalPrice } = useContext(cartContext)
 
-  const removeProduct = () => {
-    console.log('remove me')
-  }
-
   return (
     <div>
       <div
@@ -38,7 +34,7 @@ const Cart = () => {
           <React.Fragment>
             <div className={style.cartProducts}>
               {cartContents.map((product) => (
-                <CartProduct product={product} removeProduct={removeProduct} key={product.id} />
+                <CartProduct product={product} key={product.id} />
               ))}{' '}
             </div>
             <CartCheckout totalPrice={totalPrice} />
