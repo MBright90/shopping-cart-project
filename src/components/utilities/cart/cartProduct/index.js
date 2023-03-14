@@ -36,7 +36,7 @@ const CartProduct = ({ product }) => {
       ></div>
       <div className={style.productQuantity}>
         <InputQuantity quantity={product.quantity} setQuantity={setQuantity} />
-        <p className={style.totalPrice}>Total: £{calculateProductTotal()}</p>
+        <p className={style.totalPrice}>£{calculateProductTotal()}</p>
       </div>
       <button className={style.deleteButton} onClick={removeProduct} data-product-id={product.id}>
         <FontAwesomeIcon icon={faDeleteLeft} />

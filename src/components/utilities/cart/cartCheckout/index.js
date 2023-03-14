@@ -18,7 +18,7 @@ const CartCheckout = () => {
   }, [activeDiscount, totalPrice])
 
   const handleDiscountApplication = () => {
-    applyDiscountCode(currentDiscountValue)
+    applyDiscountCode(currentDiscountValue.toLowerCase())
       ? addNewModal('Discount applied')
       : addNewModal('Discount code unsuccessful')
   }
