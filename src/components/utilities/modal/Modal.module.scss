@@ -15,8 +15,9 @@
     place-content: center;
     position: fixed;
     right: 0;
+    text-align: center;
     width: 250px;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .modalCloseButton {
