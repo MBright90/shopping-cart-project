@@ -6,9 +6,13 @@ export const modalContext = createContext()
 const ModalContextProvider = ({ children }) => {
   const [currentModal, setCurrentModal] = useState(null)
 
+  const addNewModal = (message) => {
+    setCurrentModal(message)
+  }
+
   const contextValue = {
     currentModal,
-    setCurrentModal
+    addNewModal
   }
 
   return <modalContext.Provider value={contextValue}>{children}</modalContext.Provider>
