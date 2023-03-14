@@ -42,7 +42,7 @@ const CartContextProvider = ({ children }) => {
   }
 
   const applyDiscountCode = (discountCode) => {
-    const discountAppliedFor = activeVoucherCodes[discountCode.toLowercase()]
+    const discountAppliedFor = activeVoucherCodes[discountCode]
       ? activeVoucherCodes[discountCode]
       : 0
     if (discountAppliedFor > activeDiscount) {
