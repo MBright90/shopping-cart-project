@@ -1,0 +1,32 @@
+@import '~@styles/_variables.scss';
+
+.aboutPageContainer {
+    margin: 0 5% 5%;
+}
+
+.githubLink {
+    color: $manson-red;
+    display: inline-block;
+    font-family: $manson-font;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.aboutPara, .title, .infoPara {
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.title {
+    font-size: 26px;
+}
+
+.bold {
+    font-weight: bold;
+}
