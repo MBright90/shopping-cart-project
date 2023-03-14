@@ -1,3 +1,5 @@
+@import '~@styles/_variables.scss';
+
 .cartCheckoutContainer {
     align-items: flex-end;
     display: flex;
@@ -17,4 +19,34 @@
     border-radius: 3px;
     font-size: 18px;
     width: 111px;
+}
+
+.inputWrapper {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.discountCodeInput {
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 2px;
+    padding: 3px 25px 3px 5px;
+    position: relative;
+    text-align: right;
+    width: 200px;
+}
+
+.discountButton {
+    background: none;
+    border: none;
+    color: rgb(40, 40, 40);
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+}
+
+.currentDiscount {
+    font-size: 12px;
+    font-weight: bold;
 }

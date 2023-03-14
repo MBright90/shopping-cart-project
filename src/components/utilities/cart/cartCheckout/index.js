@@ -26,14 +26,14 @@ const CartCheckout = () => {
   return (
     <div className={style.cartCheckoutContainer}>
       <div className={style.inputWrapper}>
-        <input
-          className={`${style.discountCodeInput} ${
-            activeDiscount > 0 ? style.discountActive : null
-          }`}
-          id="discount-code-input"
-          onChange={(e) => setCurrentDiscountValue(e.target.value)}
-          placeholder="Discount Code"
-        />
+        <form onSubmit={handleDiscountApplication}>
+          <input
+            className={style.discountCodeInput}
+            id="discount-code-input"
+            onChange={(e) => setCurrentDiscountValue(e.target.value)}
+            placeholder="Discount Code"
+          />
+        </form>
         <button className={style.discountButton} onClick={handleDiscountApplication}>
           <FontAwesomeIcon icon={faTag} />
         </button>
