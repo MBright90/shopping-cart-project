@@ -8,7 +8,7 @@ export const cartContext = createContext()
 const CartContextProvider = ({ children }) => {
   const [cartContents, setCartContents] = useState([])
   const [isShowing, setIsShowing] = useState(false)
-  const [activeDiscount, setActiveDiscount] = useState(0.1)
+  const [activeDiscount, setActiveDiscount] = useState(0)
 
   const [totalPrice, setTotalPrice] = useState(
     cartContents.length > 0 ? cartContents.reduce((product) => product.price * product.quantity) : 0
@@ -16,6 +16,7 @@ const CartContextProvider = ({ children }) => {
 
   // Sets current total price on any cart contents change
   useEffect(() => {
+    console.log(activeDiscount)
     setTotalPrice(
       cartContents.length > 0
         ? cartContents.reduce((total, product) => total + product.price * product.quantity, 0) *
@@ -40,6 +41,17 @@ const CartContextProvider = ({ children }) => {
     return true
   }
 
+  const applyDiscountCode = (discountCode) => {
+    const discountAppliedFor = activeVoucherCodes[discountCode]
+      ? activeVoucherCodes[discountCode]
+      : 0
+    if (discountAppliedFor > activeDiscount) {
+      setActiveDiscount(discountAppliedFor)
+      return true
+    }
+    return false
+  }
+
   const removeProductFromCart = (productId) => {
     const tempCart = [...cartContents]
     const productIndex = tempCart.findIndex((product) => product.id === productId)
@@ -57,9 +69,11 @@ const CartContextProvider = ({ children }) => {
   const contextValue = {
     addProductToCart,
     removeProductFromCart,
+
+    activeDiscount,
+    applyDiscountCode,
     cartContents,
     totalPrice,
-    activeVoucherCodes,
 
     isShowing,
     setIsShowing,
