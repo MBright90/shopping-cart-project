@@ -8,7 +8,7 @@ import CartCheckout from './cartCheckout'
 import CartProduct from './cartProduct'
 
 const Cart = () => {
-  const { cartContents, isShowing, setIsShowing, totalPrice } = useContext(cartContext)
+  const { cartContents, isShowing, setIsShowing } = useContext(cartContext)
 
   return (
     <div>
@@ -37,7 +37,7 @@ const Cart = () => {
                 <CartProduct product={product} key={product.id} />
               ))}{' '}
             </div>
-            <CartCheckout totalPrice={totalPrice} />
+            <CartCheckout />
           </React.Fragment>
         )}
       </div>
