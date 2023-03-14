@@ -7,26 +7,26 @@ import React, { useContext, useEffect } from 'react'
 import style from './Modal.module.scss'
 
 const Modal = ({ message }) => {
-  const { currentModal, setCurrentModal } = useContext(modalContext)
+  const { currentModal, addNewModal } = useContext(modalContext)
 
-  // Add timeout to remove modal after 1000ms
+  // Add timeout to remove modal after 4000ms
   useEffect(() => {
     let timerId
 
     if (currentModal) {
       timerId = setTimeout(() => {
-        setCurrentModal(null)
+        addNewModal(null)
       }, 4000)
     }
 
     return () => {
       clearTimeout(timerId)
     }
-  }, [currentModal, setCurrentModal])
+  }, [currentModal, addNewModal])
 
   return (
     <div className={style.modalContainer}>
-      <button className={style.modalCloseButton} onClick={() => setCurrentModal(null)}>
+      <button className={style.modalCloseButton} onClick={() => addNewModal(null)}>
         <FontAwesomeIcon icon={faXmark} />
       </button>
       <p className={style.modalMessage}>{message}</p>
