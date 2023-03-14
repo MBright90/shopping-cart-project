@@ -16,7 +16,6 @@ const CartContextProvider = ({ children }) => {
 
   // Sets current total price on any cart contents change
   useEffect(() => {
-    console.log(activeDiscount)
     setTotalPrice(
       cartContents.length > 0
         ? cartContents.reduce((total, product) => total + product.price * product.quantity, 0) *
