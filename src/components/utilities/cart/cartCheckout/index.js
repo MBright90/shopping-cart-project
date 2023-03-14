@@ -1,25 +1,51 @@
-import { number } from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import { cartContext } from '@components/app/cartContext'
+import { modalContext } from '@components/app/modalContext'
+import { faTag } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useContext, useEffect, useState } from 'react'
 
 import style from './CartCheckout.module.scss'
 
-const CartCheckout = ({ totalPrice }) => {
+const CartCheckout = () => {
+  const { activeDiscount, applyDiscountCode, totalPrice } = useContext(cartContext)
+  const { addNewModal } = useContext(modalContext)
+
   const [formattedPrice, setFormattedPrice] = useState('0.00')
+  const [currentDiscountValue, setCurrentDiscountValue] = useState('')
 
   useEffect(() => {
     setFormattedPrice((Math.floor(totalPrice * 100) / 100).toFixed(2))
-  }, [totalPrice])
+  }, [activeDiscount, totalPrice])
+
+  const handleDiscountApplication = () => {
+    applyDiscountCode(currentDiscountValue)
+      ? addNewModal('Discount applied')
+      : addNewModal('Discount code unsuccessful')
+  }
 
   return (
     <div className={style.cartCheckoutContainer}>
+      <div className={style.inputWrapper}>
+        <input
+          className={`${style.discountCodeInput} ${
+            activeDiscount > 0 ? style.discountActive : null
+          }`}
+          id="discount-code-input"
+          onChange={(e) => setCurrentDiscountValue(e.target.value)}
+          placeholder="Discount Code"
+        />
+        <button className={style.discountButton} onClick={handleDiscountApplication}>
+          <FontAwesomeIcon icon={faTag} />
+        </button>
+      </div>
+
+      <div className={style.currentDiscount}>
+        {activeDiscount > 0 ? <p>{`Current Discount: ${activeDiscount * 100}%`}</p> : null}
+      </div>
       <div className={style.totalPrice}>£{formattedPrice}</div>
       <button className={style.checkoutButton}>Checkout</button>
     </div>
   )
-}
-
-CartCheckout.propTypes = {
-  totalPrice: number.isRequired
 }
 
 export default CartCheckout
