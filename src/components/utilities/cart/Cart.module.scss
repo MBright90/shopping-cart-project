@@ -27,12 +27,18 @@
     height: 100vh;
     padding: 20px 10px;
     overflow-y: auto;
-    right: -600px;
+    right: -100vw;
+    top: 0;
     z-index: 100;
-    width: 600px;
+    width: 100vw;
 
     &.cartShowing {
         transform: translate(-100%);
+    }
+
+    @media (min-width: $breakpoint-small) {
+        right: -600px;
+        width: 600px;
     }
 
     transition: transform .5s ease-in-out;
