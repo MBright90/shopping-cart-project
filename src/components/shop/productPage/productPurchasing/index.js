@@ -11,12 +11,12 @@ const ProductPurchasing = ({ inStock, productId }) => {
   const [quantity, setQuantity] = useState(1)
   const { addProductToCart } = useContext(cartContext)
   const { findProduct } = useContext(productContext)
-  const { setCurrentModal } = useContext(modalContext)
+  const { addNewModal } = useContext(modalContext)
 
   const handleAddProductClick = () => {
     const product = findProduct(productId)
-    if (addProductToCart(product, quantity)) setCurrentModal('Added to cart')
-    else setCurrentModal('Could not add to cart')
+    if (addProductToCart(product, quantity)) addNewModal('Added to cart')
+    else addNewModal('Could not add to cart')
   }
 
   return (
