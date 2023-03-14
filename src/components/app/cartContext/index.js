@@ -1,7 +1,7 @@
 import { object } from 'prop-types'
 import React, { createContext, useEffect, useState } from 'react'
 
-const activeVoucherCodes = { mBright90: 0.1, superstarManson: 0.05 }
+const activeVoucherCodes = { mbright90: 0.1, superstarmanson: 0.05 }
 
 export const cartContext = createContext()
 
@@ -42,7 +42,7 @@ const CartContextProvider = ({ children }) => {
   }
 
   const applyDiscountCode = (discountCode) => {
-    const discountAppliedFor = activeVoucherCodes[discountCode]
+    const discountAppliedFor = activeVoucherCodes[discountCode.toLowercase()]
       ? activeVoucherCodes[discountCode]
       : 0
     if (discountAppliedFor > activeDiscount) {
