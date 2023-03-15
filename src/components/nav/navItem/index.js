@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom'
 
 import style from './NavItem.module.scss'
 
-const NavItem = ({ LinkDestination }) => {
+const NavItem = ({ linkDestination }) => {
   return (
     <li className={style.navItem}>
-      <Link to={LinkDestination !== 'Home' ? LinkDestination.toLowerCase() : '/'}>
-        {LinkDestination}
+      <Link to={linkDestination !== 'Home' ? linkDestination.toLowerCase() : '/'}>
+        {linkDestination}
       </Link>
     </li>
   )
 }
 
 NavItem.propTypes = {
-  LinkDestination: oneOfType([string, func]).isRequired
+  linkDestination: oneOfType([string, func]).isRequired
 }
 
 export default NavItem
