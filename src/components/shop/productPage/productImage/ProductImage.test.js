@@ -1,0 +1,24 @@
+import { render } from '@testing-library/react'
+import React from 'react'
+
+import ProductImage from './index'
+
+describe('ProductImage', () => {
+  let props
+  beforeEach(
+    (props = {
+      image: 'www.example.com/testImage'
+    })
+  )
+
+  it('renders to match snapshot', () => {
+    const { image } = render(<ProductImage {...props} />)
+    expect(image).toMatchSnapshot()
+  })
+
+  it('renders using the correct url', () => {
+    render(<ProductImage {...props} />)
+    const cardImage = screen.getByRole('img')
+    expect(cardImage).toHaveStyle(`background-image: url(${props.image})`)
+  })
+})
