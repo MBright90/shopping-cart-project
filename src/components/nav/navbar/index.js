@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navArray = ['Home', 'Products', 'About']
   const navItemArray = navArray.map((listItem) => (
-    <NavItem LinkDestination={listItem} key={listItem} />
+    <NavItem linkDestination={listItem} key={listItem} />
   ))
 
   const handleBasketClick = () => {
