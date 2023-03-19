@@ -1,7 +1,7 @@
-import { render, userEvent } from '@testing-library/react'
+import { render, screen, userEvent } from '@testing-library/react'
 import React, { useContext } from 'react'
 
-import CartContextProvider, { cartContext } from '.'
+import CartContextProvider, { cartContext } from './index'
 
 describe('CartContextProvider', () => {
   it('adds a product to cart', () => {
