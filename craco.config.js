@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const path = require('path')
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
@@ -53,6 +54,13 @@ module.exports = {
           }
         })
       ]
+    }
+  },
+  babel: {
+    presets: ['@babel/preset-env', '@babel/preset-react'],
+    plugins: ['@babel/plugin-syntax-jsx'],
+    loaderOptions: (babelLoaderOptions, { env, paths }) => {
+      return babelLoaderOptions
     }
   }
 }
