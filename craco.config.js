@@ -12,15 +12,16 @@ module.exports = {
       '@styles': path.resolve(__dirname, './src/styles')
     },
     module: {
-      rules: {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        use: [{ loader: 'babel-loader' }]
-      }
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /(node_modules|bower_components)/,
+          use: [{ loader: 'babel-loader' }]
+        }
+      ]
     },
     optimization: {
       minimizer: [
-        '...',
         new ImageMinimizerPlugin({
           minimizer: {
             implementation: ImageMinimizerPlugin.imageminMinify,
@@ -54,13 +55,6 @@ module.exports = {
           }
         })
       ]
-    }
-  },
-  babel: {
-    presets: ['@babel/preset-env', '@babel/preset-react'],
-    plugins: ['@babel/plugin-syntax-jsx'],
-    loaderOptions: (babelLoaderOptions, { env, paths }) => {
-      return babelLoaderOptions
     }
   }
 }
