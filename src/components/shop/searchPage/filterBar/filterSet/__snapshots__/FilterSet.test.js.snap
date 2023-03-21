@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterSet renders to match snapshot 1`] = `
+<div>
+  <p
+    class="filterTitle"
+  >
+    exampleTitle
+  </p>
+  <ul
+    class="filterSet"
+  >
+    <button
+      class="filterItem"
+      data-testid="filter-item"
+    >
+      itemOne
+    </button>
+    <button
+      class="filterItem"
+      data-testid="filter-item"
+    >
+      itemTwo
+    </button>
+    <button
+      class="filterItem"
+      data-testid="filter-item"
+    >
+      itemThree
+    </button>
+  </ul>
+</div>
+`;

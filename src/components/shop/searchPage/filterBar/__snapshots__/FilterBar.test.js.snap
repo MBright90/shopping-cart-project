@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterBar renders to match snapshot 1`] = `
+<div>
+  <div
+    class="filterBar"
+    data-testid="filter-bar"
+  >
+    <p
+      class="filterTitle"
+    >
+      Categories
+    </p>
+    <ul
+      class="filterSet"
+    >
+      <button
+        class="filterItem"
+        data-testid="filter-item"
+      >
+        testOne
+      </button>
+      <button
+        class="filterItem"
+        data-testid="filter-item"
+      >
+        testTwo
+      </button>
+    </ul>
+  </div>
+</div>
+`;
