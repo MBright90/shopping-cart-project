@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomepageImage renders to match snapshot 1`] = `
+<div>
+  <div
+    class="slideShowImage"
+    style="background-image: url(mock-image1.jpg);"
+  >
+    <div
+      class="overlay"
+    />
+    <div
+      class="voucherAnnouncement"
+    >
+      <p
+        class="announcement"
+      >
+        Use code 
+        <span
+          class="code"
+        >
+          mBright90
+        </span>
+         for 10% off your order
+      </p>
+    </div>
+  </div>
+</div>
+`;
