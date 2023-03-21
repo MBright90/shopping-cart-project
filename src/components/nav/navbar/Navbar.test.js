@@ -2,29 +2,40 @@ import { cartContext } from '@components/app/cartContext'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
+import { HashRouter } from 'react-router-dom'
 
 import Navbar from './index'
 
 describe('Navbar', () => {
-  it('renders to match snapshot', () => {
-    const cartContents = ['test1', 'test2', 'test3']
-    const contextValue = { cartContents }
+  let cartContents
+  let contextValue
 
+  beforeEach(() => {
+    cartContents = ['test1', 'test2', 'test3']
+    contextValue = {
+      cartContents,
+      isShowing: false,
+      setIsShowing: () => {}
+    }
+  })
+
+  it('renders to match snapshot', () => {
     const { container } = render(<Navbar />, {
       wrapper: ({ children }) => (
-        <cartContext.provider value={contextValue}>{children}</cartContext.provider>
+        <HashRouter baseName="/">
+          <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>
+        </HashRouter>
       )
     })
     expect(container).toMatchSnapshot()
   })
 
   it('renders the correct count of products in cart', () => {
-    const cartContents = ['test1', 'test2', 'test3']
-    const contextValue = { cartContents }
-
     render(<Navbar />, {
       wrapper: ({ children }) => (
-        <cartContext.provider value={contextValue}>{children}</cartContext.provider>
+        <HashRouter baseName="/">
+          <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>
+        </HashRouter>
       )
     })
 
@@ -33,19 +44,19 @@ describe('Navbar', () => {
   })
 
   it('calls handleBasketClick when the basket link is clicked', () => {
-    const cartContents = ['test1', 'test2', 'test3']
-    const contextValue = { cartContents }
-
-    const handleBasketClick = jest.fn()
+    contextValue.setIsShowing = jest.fn()
 
     render(<Navbar />, {
       wrapper: ({ children }) => (
-        <cartContext.provider value={contextValue}>{children}</cartContext.provider>
+        <HashRouter baseName="/">
+          <cartContext.Provider value={contextValue}>{children}</cartContext.Provider>
+        </HashRouter>
       )
     })
 
     const basketButton = screen.getByRole('button')
     userEvent.click(basketButton)
-    expect(handleBasketClick).toHaveBeenCalled()
+
+    expect(contextValue.setIsShowing).toHaveBeenCalled()
   })
 })
