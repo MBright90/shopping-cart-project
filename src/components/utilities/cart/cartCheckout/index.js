@@ -17,7 +17,8 @@ const CartCheckout = () => {
     setFormattedPrice((Math.floor(totalPrice * 100) / 100).toFixed(2))
   }, [activeDiscount, totalPrice])
 
-  const handleDiscountApplication = () => {
+  const handleDiscountApplication = (e) => {
+    e.preventDefault()
     applyDiscountCode(currentDiscountValue.toLowerCase())
       ? addNewModal('Discount applied')
       : addNewModal('Discount code unsuccessful')
