@@ -2,25 +2,27 @@ import { productContext } from '@components/app/productContext'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
+import { HashRouter } from 'react-router-dom'
 
 import FilterItem from '.'
 
 describe('FilterSet', () => {
   let props
+  let contextValue
 
-  beforeEach(
-    (props = {
+  beforeEach(() => {
+    props = {
       filterText: 'filterTextTest'
-    })
-  )
+    }
+    contextValue = { changeCategory: () => {} }
+  })
 
   it('renders to match snapshot', () => {
-    const setCategory = jest.fn()
-    const contextValue = { setCategory }
-
     const { container } = render(<FilterItem {...props} />, {
       wrapper: ({ children }) => (
-        <productContext.Provider value={contextValue}>{children}</productContext.Provider>
+        <HashRouter basename="/">
+          <productContext.Provider value={contextValue}>{children}</productContext.Provider>
+        </HashRouter>
       )
     })
 
@@ -28,18 +30,18 @@ describe('FilterSet', () => {
   })
 
   it('calls setCategory when clicked', () => {
-    const setCategory = jest.fn()
-    const contextValue = { setCategory }
+    contextValue.changeCategory = jest.fn()
 
     render(<FilterItem {...props} />, {
       wrapper: ({ children }) => (
-        <productContext.Provider value={contextValue}>{children}</productContext.Provider>
+        <HashRouter basename="/">
+          <productContext.Provider value={contextValue}>{children}</productContext.Provider>
+        </HashRouter>
       )
     })
 
     const filterItem = screen.getByTestId('filter-item')
     userEvent.click(filterItem)
-
-    expect(setCategory).toHaveBeenCalled()
+    expect(contextValue.changeCategory).toHaveBeenCalled()
   })
 })

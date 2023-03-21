@@ -1,22 +1,34 @@
 import { productContext } from '@components/app/productContext'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
+import { HashRouter } from 'react-router-dom'
 
 import FilterBar from './index'
 
 describe('FilterBar', () => {
+  let contextValue
+
+  beforeEach(() => {
+    contextValue = { categoryFilters: ['testOne', 'testTwo'] }
+  })
+
   it('renders to match snapshot', () => {
-    const { container } = render(<FilterBar />)
+    const { container } = render(<FilterBar />, {
+      wrapper: ({ children }) => (
+        <HashRouter basename="/">
+          <productContext.Provider value={contextValue}>{children}</productContext.Provider>
+        </HashRouter>
+      )
+    })
     expect(container).toMatchSnapshot()
   })
 
   it('renders child components with correct text', () => {
-    const categoryFilters = ['testOne', 'testTwo']
-    const contextValue = { categoryFilters }
-
     render(<FilterBar />, {
       wrapper: ({ children }) => (
-        <productContext.Provider context={contextValue}>{children}</productContext.Provider>
+        <HashRouter basename="/">
+          <productContext.Provider value={contextValue}>{children}</productContext.Provider>
+        </HashRouter>
       )
     })
 
