@@ -4,22 +4,24 @@ import React, { useContext } from 'react'
 import CartContextProvider, { cartContext } from './index'
 
 describe('CartContextProvider', () => {
-  it('adds a product to cart', () => {
+  it('adds a product to cart', async () => {
     const TestComponent = () => {
       const { addProductToCart } = useContext(cartContext)
       const product = { id: 1, name: 'Test Product', price: 10.0 }
-      return <button onClick={() => addProductToCart(product, 1)}>Add to Cart</button>
+      return (
+        <button data-testid={'add-to-cart-button'} onClick={() => addProductToCart(product, 1)}>
+          Add to Cart
+        </button>
+      )
     }
 
-    render(
-      <CartContextProvider>
-        <TestComponent />
-      </CartContextProvider>
-    )
+    render(<TestComponent />, {
+      wrapper: ({ children }) => <CartContextProvider>{children}</CartContextProvider>
+    })
 
-    const addProductButton = screen.getByText(/Add to Cart/i)
+    const addProductButton = await screen.findByTestId('add-to-cart-button')
     userEvent.click(addProductButton)
-    expect(screen.getByText('Cart (1)')).toBeInTheDocument()
+    expect(await screen.findByText(/Cart (1)/i)).toBeInTheDocument()
   })
 
   it('removes a product from cart', () => {
@@ -78,7 +80,7 @@ describe('CartContextProvider', () => {
 
   test('applies discount code', () => {
     const TestComponent = () => {
-      const { applyDiscountCode, activeDiscount } = React.useContext(cartContext)
+      const { applyDiscountCode, activeDiscount } = useContext(cartContext)
       return (
         <>
           <div>Active Discount: {activeDiscount * 100}%</div>
