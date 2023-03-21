@@ -19,14 +19,14 @@ const Navbar = () => {
   }
 
   return (
-    <div className={style.navbar}>
+    <nav className={style.navbar}>
       <ul className={style.linkList}>{navItemArray}</ul>
 
       <button className={style.basketLink} onClick={handleBasketClick}>
         <FontAwesomeIcon icon={faBasketShopping} />
         <p className={style.basketAmount}>{cartContents.length}</p>
       </button>
-    </div>
+    </nav>
   )
 }
 
