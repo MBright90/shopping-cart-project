@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductPurchasing renders to match snapshot 1`] = `
+<div>
+  <div
+    class="productPurchasing"
+  >
+    <h1
+      class="purchaseTitle"
+    >
+      Purchase
+    </h1>
+    <div
+      class="addProductContainer"
+    >
+      <div
+        class="inputQuantity"
+      >
+        <button
+          class="quantityButton"
+          disabled=""
+          type="button"
+        >
+          -
+        </button>
+        <input
+          class="quantityInput"
+          data-testid="quantity-input"
+          id="quantity-input"
+          max="9"
+          min="0"
+          readonly=""
+          type="number"
+          value="1"
+        />
+        <button
+          class="quantityButton"
+          type="button"
+        >
+          +
+        </button>
+      </div>
+      <button
+        class="addProductButton"
+      >
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
+`;

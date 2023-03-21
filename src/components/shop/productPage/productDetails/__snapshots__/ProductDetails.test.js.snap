@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDetails renders information to match snapshot 1`] = `
+<div>
+  <div
+    class="productDetails"
+  >
+    <h1
+      class="productHeadline"
+    >
+      <span
+        class="productName"
+      >
+        Test Name
+      </span>
+       
+      <span
+        class="productPrice"
+      >
+        £
+        100
+      </span>
+    </h1>
+    <p
+      class="productDescription"
+    >
+      Test description
+    </p>
+  </div>
+</div>
+`;
