@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartCheckout renders to match snapshot 1`] = `
+<div>
+  <div
+    class="cartCheckoutContainer"
+  >
+    <div
+      class="inputWrapper"
+    >
+      <form>
+        <input
+          class="discountCodeInput"
+          id="discount-code-input"
+          placeholder="Discount Code"
+        />
+      </form>
+      <button
+        class="discountButton"
+        data-testid="discount-button"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-tag "
+          data-icon="tag"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="currentDiscount"
+    />
+    <div
+      class="totalPrice"
+    >
+      £
+      100.00
+    </div>
+    <button
+      class="checkoutButton"
+    >
+      Checkout
+    </button>
+  </div>
+</div>
+`;
