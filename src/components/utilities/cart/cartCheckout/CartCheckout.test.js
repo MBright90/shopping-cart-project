@@ -1,8 +1,10 @@
+/* eslint-disable testing-library/no-unnecessary-act */
 import { cartContext } from '@components/app/cartContext'
 import { modalContext } from '@components/app/modalContext'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
+import { act } from 'react-test-renderer'
 
 import CartCheckout from './index'
 
@@ -58,10 +60,14 @@ describe('CartCheckout', () => {
     })
 
     const discountInput = screen.getByPlaceholderText(/Discount Code/i)
-    await userEvent.type(discountInput, 'discountTest')
+    await act(() => {
+      userEvent.type(discountInput, 'discountTest')
+    })
 
     const applyDiscountButton = screen.getByTestId('discount-button')
-    userEvent.click(applyDiscountButton)
+    act(() => {
+      userEvent.click(applyDiscountButton)
+    })
 
     expect(cartValue.applyDiscountCode).toHaveBeenCalledWith('discounttest')
     expect(modalValue.addNewModal).toHaveBeenCalled()

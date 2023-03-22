@@ -46,7 +46,6 @@ const CartContextProvider = ({ children }) => {
       : 0
     if (discountAppliedFor > activeDiscount) {
       setActiveDiscount(discountAppliedFor)
-      console.log(activeDiscount)
       return true
     }
     return false

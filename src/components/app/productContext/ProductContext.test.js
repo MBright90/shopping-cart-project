@@ -6,9 +6,6 @@ import ProductContextProvider, { productContext } from './index'
 const TestComponent = () => {
   const { productDatabase } = useContext(productContext)
   const guitarArr = [...productDatabase.guitars]
-
-  console.log(guitarArr)
-
   return (
     <div>
       {guitarArr.map((guitar) => {
