@@ -41,11 +41,12 @@ const CartContextProvider = ({ children }) => {
   }
 
   const applyDiscountCode = (discountCode) => {
-    const discountAppliedFor = activeVoucherCodes[discountCode]
-      ? activeVoucherCodes[discountCode]
+    const discountAppliedFor = activeVoucherCodes[discountCode.toLowerCase()]
+      ? activeVoucherCodes[discountCode.toLowerCase()]
       : 0
     if (discountAppliedFor > activeDiscount) {
       setActiveDiscount(discountAppliedFor)
+      console.log(activeDiscount)
       return true
     }
     return false
