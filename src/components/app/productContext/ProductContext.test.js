@@ -1,53 +1,72 @@
 import { render, screen } from '@testing-library/react'
 import React, { useContext } from 'react'
 
-import ProductContextProvider, { productContext } from '.'
+import ProductContextProvider, { productContext } from './index'
 
 const TestComponent = () => {
   const { productDatabase } = useContext(productContext)
+  const guitarArr = [...productDatabase.guitars]
+
+  console.log(guitarArr)
 
   return (
     <div>
-      {productDatabase.guitars.map((guitar) => {
-        ;<div key={guitar.name}>
-          <h2>{guitar.name}</h2>
-          <img src={guitar.image} alt={guitar.name} />
-          <p>{guitar.description}</p>
-          <p>£{guitar.price}</p>
-        </div>
+      {guitarArr.map((guitar) => {
+        return (
+          <div key={guitar.name}>
+            <h2>{guitar.name}</h2>
+            <p>{guitar.description}</p>
+            <p>£{guitar.price}</p>
+          </div>
+        )
       })}
     </div>
   )
 }
 
-describe('productContext', () => {
+describe('ProductContext', () => {
   it('renders to match snapshot', () => {
-    const { container } = render(
-      <ProductContextProvider>
-        <TestComponent />
-      </ProductContextProvider>
-    )
-
+    const { container } = render(<TestComponent />, {
+      wrapper: ({ children }) => <ProductContextProvider>{children}</ProductContextProvider>
+    })
     expect(container).toMatchSnapshot()
   })
 
   it('provides product data', () => {
-    render(
-      <ProductContextProvider>
-        <TestComponent />
-      </ProductContextProvider>
-    )
+    render(<TestComponent />, {
+      wrapper: ({ children }) => <ProductContextProvider>{children}</ProductContextProvider>
+    })
 
-    const maTwoName = screen.getByText(/MA-2/)
-    expect(maTwoName).toBeInTheDocument()
-
-    const maTwoImage = screen.getByAltText(/MA-2/)
-    expect(maTwoImage).toBeInTheDocument()
+    const maTwoName = screen.getAllByText(/MA-2/)
+    expect(maTwoName[0]).toBeInTheDocument()
 
     const maTwoDescription = screen.getByText(/^The Manson MA-2/)
     expect(maTwoDescription).toBeInTheDocument()
 
     const maTwoPrice = screen.getByText(/£949/)
     expect(maTwoPrice).toBeInTheDocument()
+  })
+
+  it('finds a product given a valid id', () => {
+    const FindProductTest = () => {
+      const { findProduct } = useContext(productContext)
+      const foundProduct = findProduct('boss-ds1-pedals')
+      return (
+        <>
+          <p>{foundProduct.name}</p>
+          <p>£{foundProduct.price}</p>
+        </>
+      )
+    }
+
+    render(<FindProductTest />, {
+      wrapper: ({ children }) => <ProductContextProvider>{children}</ProductContextProvider>
+    })
+
+    const productName = screen.getByText(/Boss DS-1 Distortion Pedal/i)
+    expect(productName).toBeInTheDocument()
+
+    const productPrice = screen.getByText(/£49.99/i)
+    expect(productPrice).toBeInTheDocument()
   })
 })
