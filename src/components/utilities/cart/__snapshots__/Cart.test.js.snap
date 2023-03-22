@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart renders to match snapshot 1`] = `
+<div>
+  <div>
+    <div
+      class="cartOverlay overlayShowing"
+    />
+    <div
+      class="cart cartShowing"
+    >
+      <h1
+        class="cartTitle"
+      >
+        Your Cart
+      </h1>
+      <button
+        class="closeCart"
+        data-testid="cart-close-button"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-xmark "
+          data-icon="xmark"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 320 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"
+            fill="currentColor"
+          />
+        </svg>
+      </button>
+      <div
+        class="cartProducts"
+      >
+        <div
+          class="productCard"
+        >
+          <div
+            class="productDetails"
+          >
+            <p
+              class="productName"
+            >
+              testName1
+            </p>
+            <p
+              class="productPrice"
+            >
+              £
+              10
+               
+              <span
+                class="red"
+              >
+                each
+              </span>
+            </p>
+          </div>
+          <div
+            class="productImage"
+            style="background-image: url(testImage1);"
+          />
+          <div
+            class="productQuantity"
+          >
+            <div
+              class="inputQuantity"
+            >
+              <button
+                class="quantityButton"
+                disabled=""
+                type="button"
+              >
+                -
+              </button>
+              <input
+                class="quantityInput"
+                data-testid="quantity-input"
+                id="quantity-input"
+                max="9"
+                min="0"
+                readonly=""
+                type="number"
+                value="1"
+              />
+              <button
+                class="quantityButton"
+                type="button"
+              >
+                +
+              </button>
+            </div>
+            <p
+              class="totalPrice"
+            >
+              £
+              10.00
+            </p>
+          </div>
+          <button
+            class="deleteButton"
+            data-product-id="testId1"
+            data-testid="delete-button"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-delete-left "
+              data-icon="delete-left"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zM271 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="productCard"
+        >
+          <div
+            class="productDetails"
+          >
+            <p
+              class="productName"
+            >
+              testName2
+            </p>
+            <p
+              class="productPrice"
+            >
+              £
+              100
+               
+              <span
+                class="red"
+              >
+                each
+              </span>
+            </p>
+          </div>
+          <div
+            class="productImage"
+            style="background-image: url(testImage2);"
+          />
+          <div
+            class="productQuantity"
+          >
+            <div
+              class="inputQuantity"
+            >
+              <button
+                class="quantityButton"
+                type="button"
+              >
+                -
+              </button>
+              <input
+                class="quantityInput"
+                data-testid="quantity-input"
+                id="quantity-input"
+                max="9"
+                min="0"
+                readonly=""
+                type="number"
+                value="2"
+              />
+              <button
+                class="quantityButton"
+                type="button"
+              >
+                +
+              </button>
+            </div>
+            <p
+              class="totalPrice"
+            >
+              £
+              200.00
+            </p>
+          </div>
+          <button
+            class="deleteButton"
+            data-product-id="testId2"
+            data-testid="delete-button"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-delete-left "
+              data-icon="delete-left"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 576 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M576 128c0-35.3-28.7-64-64-64H205.3c-17 0-33.3 6.7-45.3 18.7L9.4 233.4c-6 6-9.4 14.1-9.4 22.6s3.4 16.6 9.4 22.6L160 429.3c12 12 28.3 18.7 45.3 18.7H512c35.3 0 64-28.7 64-64V128zM271 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+         
+      </div>
+      <div
+        class="cartCheckoutContainer"
+      >
+        <div
+          class="inputWrapper"
+        >
+          <form>
+            <input
+              class="discountCodeInput"
+              id="discount-code-input"
+              placeholder="Discount Code"
+            />
+          </form>
+          <button
+            class="discountButton"
+            data-testid="discount-button"
+          >
+            <svg
+              aria-hidden="true"
+              class="svg-inline--fa fa-tag "
+              data-icon="tag"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              viewBox="0 0 448 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="currentDiscount"
+        />
+        <div
+          class="totalPrice"
+        >
+          £
+          NaN
+        </div>
+        <button
+          class="checkoutButton"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
