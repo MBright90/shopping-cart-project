@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductContext renders to match snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <h2>
+        MA-2
+      </h2>
+      <p>
+        The Manson MA-2 is a versatile and affordable electric guitar that's perfect for players of all levels. Its lightweight body and comfortable neck make it easy to play for hours on end, while its high-output pickups deliver a wide range of tones. Whether you're playing blues, rock, or metal, the MA-2 can handle it all with ease.
+      </p>
+      <p>
+        £
+        949
+      </p>
+    </div>
+    <div>
+      <h2>
+        NEBULA-X
+      </h2>
+      <p>
+        The Manson NEBULA-X is a sleek and futuristic electric guitar that's perfect for players who want a modern and innovative instrument. Its unique design and custom pickups deliver a wide range of tones, from crisp and clean to heavy and distorted. Whether you're playing on stage or in the studio, the NEBULA-X is sure to turn heads and deliver an unforgettable sound.
+      </p>
+      <p>
+        £
+        1050
+      </p>
+    </div>
+    <div>
+      <h2>
+        DLR-02
+      </h2>
+      <p>
+        The Manson DLR-02 is a high-end electric guitar that's designed for professional players who demand the very best. Its hand-crafted construction, premium materials, and custom pickups deliver a tone that's rich, complex, and full of character. Whether you're playing jazz, fusion, or experimental music, the DLR-02 is sure to inspire and elevate your playing to new heights.
+      </p>
+      <p>
+        £
+        5699
+      </p>
+    </div>
+    <div>
+      <h2>
+        ORYX VII
+      </h2>
+      <p>
+        The Manson ORYX VII is a bold and powerful electric guitar that's perfect for heavy rock and metal. Its aggressive styling and custom pickups deliver a tone that's thick, aggressive, and full of attitude. Whether you're playing crushing riffs or blistering solos, the ORYX VII is sure to make a statement and deliver a sound that's truly unforgettable.
+      </p>
+      <p>
+        £
+        3349
+      </p>
+    </div>
+    <div>
+      <h2>
+        META MBM-1
+      </h2>
+      <p>
+        The Manson META MBM-1 is a signature electric guitar designed in collaboration with Matt Bellamy of the band Muse. Its unique shape, custom pickups, and versatile switching options make it perfect for players who want to replicate Matt's iconic sound. Whether you're a fan of Muse or just looking for a great guitar that's full of character, the META MBM-1 is sure to deliver.
+      </p>
+      <p>
+        £
+        499
+      </p>
+    </div>
+    <div>
+      <h2>
+        DL-2
+      </h2>
+      <p>
+        The Manson DL-2 is a versatile and high-quality electric guitar that's perfect for players who demand the very best. Its lightweight body and custom pickups deliver a wide range of tones, from clean and mellow to heavy and distorted. Whether you're playing in a band, recording in the studio, or just jamming at home, the DL-2 is sure to inspire and impress.
+      </p>
+      <p>
+        £
+        1099
+      </p>
+    </div>
+  </div>
+</div>
+`;
