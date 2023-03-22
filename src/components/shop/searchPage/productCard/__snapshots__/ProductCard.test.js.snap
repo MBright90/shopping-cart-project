@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCard renders to match snapshot 1`] = `
+<div>
+  <a
+    class="productCard"
+    data-testid="product-card"
+    href="#/products/undefined"
+    tabindex="-1"
+  >
+    <div
+      class="productImage"
+      role="img"
+      style="background-image: url(exampleImage);"
+    />
+    <div
+      class="detailsContainer"
+    >
+      <p
+        class="name"
+      >
+        exampleName
+      </p>
+      <p
+        class="price"
+      >
+        £
+        999
+      </p>
+    </div>
+  </a>
+</div>
+`;

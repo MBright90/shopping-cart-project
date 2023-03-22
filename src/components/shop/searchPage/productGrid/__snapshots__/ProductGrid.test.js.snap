@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductGrid renders to match snapshot 1`] = `
+<div>
+  <div
+    class="productGrid"
+  >
+    <a
+      class="productCard"
+      data-testid="product-card"
+      href="#/products/undefined"
+      tabindex="-1"
+    >
+      <div
+        class="productImage"
+        role="img"
+      />
+      <div
+        class="detailsContainer"
+      >
+        <p
+          class="name"
+        >
+          example product
+        </p>
+        <p
+          class="price"
+        >
+          £
+          500
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPageOverview renders to match snapshot 1`] = `
+<div>
+  <main
+    class="searchPageOverview"
+  >
+    <div
+      class="filterBar"
+      data-testid="filter-bar"
+    >
+      <p
+        class="filterTitle"
+      >
+        Categories
+      </p>
+      <ul
+        class="filterSet"
+      >
+        <button
+          class="filterItem"
+          data-testid="filter-item"
+        >
+          testFilter1
+        </button>
+        <button
+          class="filterItem"
+          data-testid="filter-item"
+        >
+          testFilter2
+        </button>
+      </ul>
+    </div>
+    <div
+      class="productGrid"
+    >
+      <a
+        class="productCard"
+        data-product-id="productTest-guitars"
+        data-testid="product-card"
+        href="#/products/productTest-guitars"
+        tabindex="-1"
+      >
+        <div
+          class="productImage"
+          role="img"
+          style="background-image: url(guitarImages.maTwo);"
+        />
+        <div
+          class="detailsContainer"
+        >
+          <p
+            class="name"
+          >
+            productTest
+          </p>
+          <p
+            class="price"
+          >
+            £
+            10
+          </p>
+        </div>
+      </a>
+    </div>
+  </main>
+</div>
+`;

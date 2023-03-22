@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputQuantity renders to match snapshot 1`] = `
+<div>
+  <div
+    class="inputQuantity"
+  >
+    <button
+      class="quantityButton"
+      type="button"
+    >
+      -
+    </button>
+    <input
+      class="quantityInput"
+      data-testid="quantity-input"
+      id="quantity-input"
+      max="9"
+      min="0"
+      readonly=""
+      type="number"
+      value="3"
+    />
+    <button
+      class="quantityButton"
+      type="button"
+    >
+      +
+    </button>
+  </div>
+</div>
+`;
