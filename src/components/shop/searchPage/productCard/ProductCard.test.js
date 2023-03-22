@@ -1,40 +1,28 @@
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import React from 'react'
+import { HashRouter } from 'react-router-dom'
 
 import ProductCard from './index'
 
 describe('ProductCard', () => {
   let props
-  beforeEach((props = { product: { name: 'exampleName', image: 'exampleImage', price: '999' } }))
+  beforeEach(() => {
+    props = { product: { name: 'exampleName', image: 'exampleImage', price: '999' } }
+  })
 
   it('renders to match snapshot', () => {
-    const { container } = render(<ProductCard {...props} />)
+    const { container } = render(<ProductCard {...props} />, {
+      wrapper: ({ children }) => <HashRouter basename="/">{children}</HashRouter>
+    })
     expect(container).toMatchSnapshot()
   })
 
   it('sets the correct image source', () => {
-    render(<ProductCard {...props} />)
+    render(<ProductCard {...props} />, {
+      wrapper: ({ children }) => <HashRouter basename="/">{children}</HashRouter>
+    })
 
-    const productImage = screen.getAllRole('img')
+    const productImage = screen.getByRole('img')
     expect(productImage).toHaveStyle('background-image: url("exampleImage")')
-  })
-
-  it('calls handleProductClick when clicked', () => {
-    const handleProductClick = jest.fn()
-    render(<ProductCard {...props} />)
-
-    const productCard = screen.getByTestId('product-card')
-    userEvent.click(productCard)
-    expect(handleProductClick).toHaveBeenCalled()
-  })
-
-  it('calls handleProductKeyDown when clicked', () => {
-    const handleProductKeyDown = jest.fn()
-    render(<ProductCard {...props} />)
-
-    const productCard = screen.getByTestId('product-card')
-    userEvent.keyDown(productCard, 'Enter')
-    expect(handleProductKeyDown).toHaveBeenCalled()
   })
 })

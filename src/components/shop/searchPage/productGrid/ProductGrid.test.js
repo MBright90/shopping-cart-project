@@ -1,6 +1,7 @@
 import { productContext } from '@components/app/productContext'
 import { render } from '@testing-library/react'
 import React from 'react'
+import { HashRouter } from 'react-router-dom'
 
 import ProductGrid from './index'
 
@@ -18,7 +19,9 @@ describe('ProductGrid', () => {
 
     const { container } = render(<ProductGrid />, {
       wrapper: ({ children }) => (
-        <productContext.Provider value={contextValue}>{children}</productContext.Provider>
+        <HashRouter basename="/">
+          <productContext.Provider value={contextValue}>{children}</productContext.Provider>
+        </HashRouter>
       )
     })
 
