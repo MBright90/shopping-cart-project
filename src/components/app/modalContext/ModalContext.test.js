@@ -1,6 +1,8 @@
+/* eslint-disable testing-library/no-unnecessary-act */
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React, { useContext } from 'react'
+import { act } from 'react-test-renderer'
 
 import ModalContextProvider, { modalContext } from './index'
 
@@ -34,7 +36,9 @@ describe('ModalContextProvider', () => {
     )
 
     const modalButton = screen.getByText(/Add Modal/i)
-    userEvent.click(modalButton)
+    act(() => {
+      userEvent.click(modalButton)
+    })
 
     const testModalDisplay = screen.getByText(/Test Modal/i)
     expect(testModalDisplay).toBeInTheDocument()
