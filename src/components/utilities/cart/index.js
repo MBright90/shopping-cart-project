@@ -22,7 +22,11 @@ const Cart = () => {
 
       <div className={`${style.cart} ${isShowing ? style.cartShowing : null}`}>
         <h1 className={style.cartTitle}>Your Cart</h1>
-        <button className={style.closeCart} onClick={() => setIsShowing(false)}>
+        <button
+          className={style.closeCart}
+          onClick={() => setIsShowing(false)}
+          data-testid="cart-close-button"
+        >
           <FontAwesomeIcon icon={faXmark} />
         </button>
 
