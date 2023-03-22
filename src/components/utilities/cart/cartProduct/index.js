@@ -38,7 +38,12 @@ const CartProduct = ({ product }) => {
         <InputQuantity quantity={product.quantity} setQuantity={setQuantity} />
         <p className={style.totalPrice}>£{calculateProductTotal()}</p>
       </div>
-      <button className={style.deleteButton} onClick={removeProduct} data-product-id={product.id}>
+      <button
+        className={style.deleteButton}
+        onClick={removeProduct}
+        data-product-id={product.id}
+        data-testid="delete-button"
+      >
         <FontAwesomeIcon icon={faDeleteLeft} />
       </button>
     </div>

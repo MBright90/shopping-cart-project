@@ -35,7 +35,11 @@ const CartCheckout = () => {
             placeholder="Discount Code"
           />
         </form>
-        <button className={style.discountButton} onClick={handleDiscountApplication}>
+        <button
+          className={style.discountButton}
+          onClick={handleDiscountApplication}
+          data-testid="discount-button"
+        >
           <FontAwesomeIcon icon={faTag} />
         </button>
       </div>
